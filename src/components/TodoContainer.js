@@ -27,7 +27,7 @@ const TodoContainer = () => {
 
     const handleDelete = (id) => {
         deleteTask(id).then(res => (
-            setUpdateDeleted(Math.random()),
+            setUpdateDeleted(prev => !prev),
             console.log(res)
         ))
     }
@@ -35,7 +35,7 @@ const TodoContainer = () => {
     const handleUpdate = (task) => {
         task.isCompleted = !task.isCompleted
         updateTask(task).then(res => (
-            setUpdate(Math.random()),
+            setUpdate(prev => !prev),
             console.log(res)
         ))
     }
