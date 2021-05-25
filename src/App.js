@@ -7,6 +7,9 @@ function App() {
     <div className="App">
       <h1 className="title">Academlo Student's Todo List</h1>
       <TodoContainer />
+      <br/>
+      <br/>
+      <br/>
     </div>
   );
 }
