@@ -19,7 +19,8 @@ const TodoContainer = () => {
     }, [task, updateDeleted, update]) 
 
 
-    const handleCreate = (e) =>{
+    const handleCreate = (e, reset) =>{
+        reset()
         create(e).then(res => {
             setTask(e)
         })

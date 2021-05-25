@@ -61,6 +61,7 @@ body{
   color:white;
   font-weight: 800;
   margin: 3rem 0 3rem 0;
+  position: relative
 }
 
 .no-padding{
@@ -82,4 +83,27 @@ body{
 
 .separate{
   margin: 6px 0 6px 0;
+}
+
+.gray{
+  color: rgb(83, 83, 83);
+  background-color: rgb(209, 209, 209);
+}
+
+.powered-style{
+  font-family: 'Kalam', cursive;
+  position: relative;
+  bottom: 6em;
+  left: 16em;
+  transform: rotate(10deg);
+  font-weight: 700;
+  color: rgb(219, 35, 35)
+}
+
+@media (max-width: 575px) {
+  .powered-style{
+    bottom:2em;
+    left: 0;
+    transform: rotate(0);
+  }
 }
