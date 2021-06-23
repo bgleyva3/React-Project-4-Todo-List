@@ -5,6 +5,7 @@ import create from "../services/create"
 import read from "../services/read"
 import deleteTask from "../services/deleteTask"
 import updateTask from "../services/updateTask"
+import Loading from "./Loading"
 
 
 const TodoContainer = () => {
@@ -13,9 +14,14 @@ const TodoContainer = () => {
     const [task, setTask] = useState([])
     const [updateDeleted, setUpdateDeleted] = useState(null)
     const [update, setUpdate] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [fetchDone, setFetchDone] = useState(false)
 
     useEffect(() => {
-        read().then(res => setData(res.todos.reverse()));
+        setLoading(true)
+        read().then(res => setData(res.todos.reverse()))
+              .then(() => setLoading(false))
+              .then(() => setFetchDone(true))
     }, [task, updateDeleted, update]) 
 
 
@@ -47,8 +53,9 @@ const TodoContainer = () => {
 
     return(
         <div>
+            {loading && <Loading/>}
             <CreateTodo handleCreate={handleCreate} />
-            {list}
+            {data[0] ? list : fetchDone && <h2 className="no-tasks-color">Start adding any task</h2>}
         </div>
     )
 }

@@ -23,6 +23,16 @@ body{
   width: auto;
 }
 
+.position-loader{
+  position: absolute;
+  width: 100%;
+  margin-top: 10rem;
+}
+
+.no-tasks-color{
+  color: rgb(95, 72, 59)
+}
+
 
 .btn-warning{
   border: 2px solid rgba(255, 255, 255, 0.473);
